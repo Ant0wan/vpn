@@ -1,15 +1,14 @@
 terraform {
   required_providers {
-    openvpn-cloud = {
-      source  = "OpenVPN/openvpn-cloud"
-      version = "0.0.10"
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~>4.0"
     }
   }
   required_version = "~> 1.3.0"
 }
 
-provider "openvpn-cloud" {
-  # Configuration options
+provider "aws" {
+  region = var.region
 }
-
 
