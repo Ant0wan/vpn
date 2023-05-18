@@ -5,3 +5,4 @@ An OpenVPN deployment using Terraform.
 
 https://www.cyberghostvpn.com/en_US/privacyhub/create-your-own-vpn/
 
+https://github.com/dumrauf/openvpn-terraform-install
