@@ -2,9 +2,7 @@ name: OpenAI PR Description Generator
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
+    types: [opened, reopened, synchronize]
 
 permissions:
   pull-request: write
