@@ -6,8 +6,7 @@ on:
       - opened
       - synchronize
 
-permissions:
-    pull-requests: write
+permissions: write-all
 
 jobs:
   description:
