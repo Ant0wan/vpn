@@ -13,9 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Ant0wan/openai-pr@0.0.7
-        with:
-          api-key: ${{ secrets.OPENAI_API_KEY }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: TEST PR 0065
+        uses: Ant0wan/testPR@0.1.0
+
+        #- uses: Ant0wan/openai-pr@0.0.7
+        #  with:
+        #    api-key: ${{ secrets.OPENAI_API_KEY }}
+        #  env:
+        #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
