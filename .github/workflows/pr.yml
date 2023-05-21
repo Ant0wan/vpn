@@ -6,10 +6,12 @@ on:
       - opened
       - synchronize
 
-permissions: write-all
+permissions:
+  pull-requests: write
+  issues: write
 
 jobs:
-  description:
+  pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
