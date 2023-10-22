@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Update major git tag
-    - run: |
+      run: |
         set -o pipefail
         git tag -f "$(grep '^v[0-9]\+\.[0-9]\+\.[0-9]\+\(.*\)\?$' <<< ${GITHUB_REF#refs/*/} | sed 's/^v\([0-9]\+\)\..*/v\1/')"
   note:
