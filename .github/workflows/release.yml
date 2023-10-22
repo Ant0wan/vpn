@@ -11,6 +11,7 @@ env:
 defaults:
   run:
     shell: bash
+    command: set -o pipefail
 
 permissions: write-all
 
@@ -19,9 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: |
-        set -o pipefail
-        git tag -f "$(grep '^v[0-9]\+\.[0-9]\+\.[0-9]\+\(.*\)\?$' <<< ${GITHUB_REF#refs/*/} | sed 's/^v\([0-9]\+\)\..*/v\1/')"
+    - run: git tag -f "$(grep '^v[0-9]\+\.[0-9]\+\.[0-9]\+\(.*\)\?$' <<< ${GITHUB_REF#refs/*/} | sed 's/^v\([0-9]\+\)\..*/v\1/')"
   note:
     runs-on: ubuntu-latest
     steps:
