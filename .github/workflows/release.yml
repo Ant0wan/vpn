@@ -25,3 +25,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: gh release create ${GITHUB_REF#refs/*/} --generate-notes
+
