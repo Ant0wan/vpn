@@ -8,6 +8,10 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+defaults:
+  run:
+    shell: bash -o pipefail
+
 permissions: write-all
 
 jobs:
@@ -15,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ${GITHUB_REF#refs/*/}
+    - run: git tag -f "$(grep '^v[0-9]\+\.[0-9]\+\.[0-9]\+\(.*\)\?$' <<< ${GITHUB_REF#refs/*/} | sed 's/^v\([0-9]\+\)\..*/v\1/')"
   note:
     runs-on: ubuntu-latest
     steps:
