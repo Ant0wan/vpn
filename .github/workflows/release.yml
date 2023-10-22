@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: 
+    - run: ${GITHUB_REF#refs/*/}
   note:
     runs-on: ubuntu-latest
     steps:
